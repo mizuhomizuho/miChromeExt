@@ -3,7 +3,7 @@
 
 !(() => {
 
-    if (location.host !== 'mi-shop.com') {
+    if (location.host !== 'meow.meow') {
         return;
     }
 
