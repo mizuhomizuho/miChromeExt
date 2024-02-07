@@ -3,23 +3,42 @@
 
 !(() => {
 
-    if (location.host !== 'meow.meow') {
-        return;
+    const el = document.createElement('div')
+
+    const addBanner = (color, text) => {
+
+        el.style.backgroundColor = color
+        el.style.color = 'white'
+        el.style.position = 'fixed'
+        el.style.top = 0
+        el.style.left = 0
+        el.style.right = 0
+        el.style.zIndex = 88888888
+        el.style.fontSize = '10px'
+        el.style.textAlign = 'center'
+        el.innerHTML = text
+        document.body.append(el)
     }
 
-    const el = document.createElement('div')
-    el.style.backgroundColor = 'red'
-    el.style.color = 'white'
-    el.style.position = 'fixed'
-    el.style.top = 0
-    el.style.left = 0
-    el.style.right = 0
-    el.style.zIndex = 88888888
-    el.style.fontSize = '10px'
-    el.style.textAlign = 'center'
-    el.innerHTML = 'PROD'
-    document.body.append(el)
+    if (location.host === 'meow.meow') {
 
+        addBanner('red', 'PROD')
+    }
+
+    if (location.host === 'meow1.meow.meow' || location.host === 'meow2.meow.meow') {
+
+        addBanner('gold', 'Dev Remote')
+    }
+
+    if (location.host === 'meow.meow.meow') {
+
+        addBanner('green', 'Dev Local')
+    }
+
+    if (location.pathname.indexOf('/bitrix/admin') === 0) {
+
+        el.style.fontSize = '17px'
+    }
 })()
 
 !(() => {

@@ -3,23 +3,42 @@
 
 !(() => {
 
-    if (location.host !== 'mi-shop.com') {
-        return;
+    const el = document.createElement('div')
+
+    const addBanner = (color, text) => {
+
+        el.style.backgroundColor = color
+        el.style.color = 'white'
+        el.style.position = 'fixed'
+        el.style.top = 0
+        el.style.left = 0
+        el.style.right = 0
+        el.style.zIndex = 88888888
+        el.style.fontSize = '10px'
+        el.style.textAlign = 'center'
+        el.innerHTML = text
+        document.body.append(el)
     }
 
-    const el = document.createElement('div')
-    el.style.backgroundColor = 'red'
-    el.style.color = 'white'
-    el.style.position = 'fixed'
-    el.style.top = 0
-    el.style.left = 0
-    el.style.right = 0
-    el.style.zIndex = 88888888
-    el.style.fontSize = '10px'
-    el.style.textAlign = 'center'
-    el.innerHTML = 'PROD'
-    document.body.append(el)
+    if (location.host === 'mi-shop.com') {
 
+        addBanner('red', 'PROD')
+    }
+
+    if (location.host === 'bab.mi-shop.com' || location.host === 'dev.mi-shop.com') {
+
+        addBanner('gold', 'Dev Remote')
+    }
+
+    if (location.host === 'promo.mi-shop.com') {
+
+        addBanner('green', 'Dev Local')
+    }
+
+    if (location.pathname.indexOf('/bitrix/admin') === 0) {
+
+        el.style.fontSize = '17px'
+    }
 })()
 
 !(() => {
