@@ -27,7 +27,7 @@
 
     if (location.host === 'bab.mi-shop.com' || location.host === 'dev.mi-shop.com') {
 
-        addBanner('gold', 'Dev Remote')
+        addBanner('orange', 'Dev Remote')
     }
 
     if (location.host === 'promo.mi-shop.com') {

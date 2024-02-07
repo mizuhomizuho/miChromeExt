@@ -27,7 +27,7 @@
 
     if (location.host === 'meow1.meow.meow' || location.host === 'meow2.meow.meow') {
 
-        addBanner('gold', 'Dev Remote')
+        addBanner('orange', 'Dev Remote')
     }
 
     if (location.host === 'meow.meow.meow') {
