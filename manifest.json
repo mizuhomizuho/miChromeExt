@@ -16,7 +16,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.your-domain.com/*"
+        "*://*.mi-shop.com/*"
       ],
       "js": ["contentScript.js"],
       "css" : ["mi.css"]
