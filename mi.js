@@ -1,7 +1,7 @@
 
 'use strict'
 
-!(() => {
+;(() => {
 
     if (location.pathname.indexOf('/cart') !== 0) {
 
@@ -40,12 +40,10 @@
             }
         }
 
-
-
     }, 1700 )
 })()
 
-!(() => {
+;(() => {
 
     const el = document.createElement('div')
 
@@ -85,7 +83,7 @@
     }
 })()
 
-!(() => {
+;(() => {
 
     if (location.pathname !== '/bitrix/admin/fileman_admin.php') {
         return;
