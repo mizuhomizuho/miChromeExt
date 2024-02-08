@@ -3,6 +3,50 @@
 
 !(() => {
 
+    if (location.pathname.indexOf('/cart') !== 0) {
+
+        return
+    }
+
+    const interval = setInterval(() => {
+
+        const arr = [...document.querySelectorAll('.b-basket__wrapper')]
+
+        if (arr.length) {
+            clearInterval(interval)
+        }
+
+        for (const key in arr) {
+
+            const el = arr[key]
+
+            if (
+                el.querySelectorAll('.page-content__title.page-content__title--white').length === 1
+                && el.querySelector('.page-content__title.page-content__title--white').innerHTML === 'Оплата'
+            ) {
+
+                const arr = [...el.querySelectorAll('.b-basket__tab')]
+
+                for (const key in arr) {
+
+                    const el = arr[key]
+
+                    el.querySelector('.b-basket__tab-title').innerHTML
+                        = el.querySelector('.b-basket__tab-title').innerHTML
+                        + ' (' + el.dataset.id + ')'
+                }
+
+                break
+            }
+        }
+
+
+
+    }, 1700 )
+})()
+
+!(() => {
+
     const el = document.createElement('div')
 
     const addBanner = (color, text) => {
