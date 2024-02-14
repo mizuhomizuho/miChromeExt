@@ -22,7 +22,10 @@
 
             if (
                 el.querySelectorAll('.page-content__title.page-content__title--white').length === 1
-                && el.querySelector('.page-content__title.page-content__title--white').innerHTML === 'Оплата'
+                && (
+                    el.querySelector('.page-content__title.page-content__title--white').innerHTML === 'Оплата'
+                    || el.querySelector('.page-content__title.page-content__title--white').innerHTML === 'Получение заказа'
+                )
             ) {
 
                 const arr = [...el.querySelectorAll('.b-basket__tab')]
